@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { inngest } from "./client";
-import { createAgent, anthropic } from '@inngest/agent-kit';
+import { createAgent, gemini } from '@inngest/agent-kit';
 
 export const helloWorld = inngest.createFunction(
   { id: "hello-world" },
@@ -18,12 +18,12 @@ export const dbaAgent = createAgent({
   system:
     'You are a PostgreSQL expert database administrator. ' +
     'You only provide answers to questions related to PostgreSQL database schema, indexes, and extensions.',
-  model: anthropic({
-    model: 'gemini-2.5-flash-preview-04-17',
+  model: gemini({
+    model: 'gemini-2.0-flash',
     apiKey: 'AIzaSyCCbHxYHatc8c6jNWvwW3EBxsy47YUXh24',
-    defaultParameters: {
-      max_tokens: 1000,
-    },
+    // defaultParameters: {
+    //   max_tokens: 1000,
+    // },
   }),
 });
 

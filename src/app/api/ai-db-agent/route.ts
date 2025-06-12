@@ -55,7 +55,7 @@ async function getRuns(runId: string){
           }
       });
       console.log("Result from the api", result)
-      return result.data;
+      return result.data.data;
     } catch (error) {
       console.error(`Error fetching run status for ${runId}:`, error);
       throw error;
