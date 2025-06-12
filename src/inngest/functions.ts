@@ -12,7 +12,6 @@ export const helloWorld = inngest.createFunction(
 );
 
 
-
 export const dbaAgent = createAgent({
   name: 'Database administrator',
   description: 'Provides expert support for managing PostgreSQL databases',
@@ -21,7 +20,7 @@ export const dbaAgent = createAgent({
     'You only provide answers to questions related to PostgreSQL database schema, indexes, and extensions.',
   model: anthropic({
     model: 'gemini-2.5-flash-preview-04-17',
-    apiKey: process.env.GEMINI_API_KEY,
+    apiKey: 'AIzaSyCCbHxYHatc8c6jNWvwW3EBxsy47YUXh24',
     defaultParameters: {
       max_tokens: 1000,
     },
@@ -34,6 +33,7 @@ export const dbaAgentFunction = inngest.createFunction(
     async ({ event, step }) => {
         const { question } = event.data;
         const response = await dbaAgent.run(question);
+        console.log("The response in the dbaAgentFunction in Function.ts", response)
         return response;
     }
 )
