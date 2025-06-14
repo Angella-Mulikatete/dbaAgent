@@ -7,11 +7,11 @@ export default function Home() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            PostgreSQL Database Assistant
+             Database Assistant
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Get expert help with your PostgreSQL databases. Ask questions about schemas, indexes, 
-            extensions, performance optimization, and more.
+            extensions, performance optimization, etc.
           </p>
         </div>
         <DBAChat />
